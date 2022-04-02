@@ -12,7 +12,7 @@ import { Credit, CreditStatus, Installment } from './entities/index';
       username: 'root',
       password: 'starbot',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      synchronize: false,
     }),
     TypeOrmModule.forFeature([Credit, CreditStatus, Installment]),
   ],
