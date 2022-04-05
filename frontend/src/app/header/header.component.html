@@ -3,11 +3,16 @@
   <nav id="nav">
     <ul>
       <li><button routerLink="/">Home</button></li>
-      <li><button>Logout</button></li>
+
       <ng-container>
-        <li><button routerLink="/login">Login</button></li>
-        <li><button routerLink="/credits-new/:id">Ask for a credit</button></li>
+        <li *ngIf="!isLogged"><button routerLink="/login">Login</button></li>
+        <li *ngIf="isLogged">
+          <button routerLink="/credits-new/{{ getId() }}">
+            Ask for a credit
+          </button>
+        </li>
       </ng-container>
+      <li *ngIf="isLogged"><button (click)="handleLogout()">Logout</button></li>
     </ul>
   </nav>
 </header>
