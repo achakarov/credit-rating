@@ -38,10 +38,14 @@
     font-size: 20px;
     margin: 50px 20px;
     transition: transform 0.3s;
+    border-radius: 20px;
   }
   
   .background-container a:hover {
     transform: scale(1.1);
+    background: #fff;
+    color: rgb(255, 102, 0);
+    padding: 10px 20px;
   }
   
   img {

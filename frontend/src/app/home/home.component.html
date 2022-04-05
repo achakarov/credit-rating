@@ -9,7 +9,7 @@
       aliquet eros vel mi sagittis semper.
     </p>
     <div class="auth-buttons">
-      <a routerLink="/login">Login</a>
+      <a *ngIf="!isLogged" id="login-btn" routerLink="/login">Login</a>
     </div>
   </section>
 </section>
