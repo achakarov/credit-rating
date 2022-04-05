@@ -2,11 +2,16 @@
   <div class="color">
     <div class="login-form">
       <h1>Login</h1>
-      <form id="form">
+      <form id="form" #form="ngForm" (ngSubmit)="login(form)">
         <label for="id">User ID</label>
-        <input type="text" name="id" />
+        <input type="text" name="id" #idInput="ngModel" ngModel />
         <label for="password">Password</label>
-        <input type="password" />
+        <input
+          type="password"
+          name="password"
+          #passwordInput="ngModel"
+          ngModel
+        />
         <button>Submit</button>
       </form>
     </div>
