@@ -10,7 +10,7 @@
         <th>Credit status<br /></th>
       </tr>
     </thead>
-    <tbody *ngFor="let credit of credits | async">
+    <tbody *ngFor="let credit of this.credits">
       <tr>
         <td>{{ credit.due_date }}</td>
         <td>{{ credit.installment_days }}</td>

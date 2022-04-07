@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { UserService } from '../services/user-service.service';
 import { Credit } from '../interfaces/ICredit';
 
@@ -9,14 +8,15 @@ import { Credit } from '../interfaces/ICredit';
   styleUrls: ['./my-credits.component.css'],
 })
 export class MyCreditsComponent implements OnInit {
-  credits!: Observable<Credit[]>;
+  public credits: any;
+  public userId = localStorage.getItem('user');
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    const id = this.getId();
-    this.userService.readMyCredits(id).subscribe((result: any) => {
-      this.credits = result;
+    this.userService.readMyCredits(this.userId).subscribe((result: any) => {
+      this.credits = JSON.stringify(result);
+      console.log(this.credits);
     });
   }
 

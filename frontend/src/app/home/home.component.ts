@@ -8,6 +8,7 @@ import { UserService } from '../services/user-service.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  public userId = localStorage.getItem('user');
   get isLogged(): string | null {
     return this.userService.isLogged;
   }
@@ -25,8 +26,9 @@ export class HomeComponent implements OnInit {
   // }
 
   goToMyCredits(): void {
-    const userId = localStorage.getItem('user');
-    console.log(userId);
-    this.router.navigate([`/credits/user/${userId}`]);
+    if (localStorage.hasOwnProperty('user') !== null) {
+      this.userId = localStorage.getItem('user');
+    }
+    this.router.navigate([`/credits/user/${this.userId}`]);
   }
 }
