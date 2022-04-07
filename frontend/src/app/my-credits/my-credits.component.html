@@ -1,0 +1,22 @@
+<section class="credits-section">
+  <h3>My Credits</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Due date</th>
+        <th>Installment days</th>
+        <th>Principal</th>
+        <th>Credit status<br /></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let credit of credits | async">
+      <tr>
+        <td>{{ credit.due_date }}</td>
+        <td>{{ credit.installment_days }}</td>
+        <td>{{ credit.principal }}</td>
+        <td>{{ credit.credit_status_id }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

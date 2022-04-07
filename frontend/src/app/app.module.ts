@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { NewCreditComponent } from './new-credit/new-credit.component';
 
 import { UserService } from './services/user-service.service';
 import { FormsModule } from '@angular/forms';
+import { MyCreditsComponent } from './my-credits/my-credits.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     LoginComponent,
     NewCreditComponent,
+    MyCreditsComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [UserService],
   bootstrap: [AppComponent],
 })
