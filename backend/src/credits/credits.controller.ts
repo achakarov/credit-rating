@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { CreditService } from 'src/credit/credit.service';
 import { Credit } from 'src/entities';
 
-@Controller('credits-new')
+@Controller('credits/user')
 export class CreditsController {
   constructor(private creditService: CreditService) {}
   @Get(':id')
