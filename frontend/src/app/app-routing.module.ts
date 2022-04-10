@@ -16,7 +16,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'credits-new/:id',
+    path: 'credits/new/:id',
     component: NewCreditComponent,
   },
   {

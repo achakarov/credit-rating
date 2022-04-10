@@ -6,9 +6,7 @@
 
       <ng-container>
         <li *ngIf="isLogged">
-          <button routerLink="/credits-new/{{ getId() }}">
-            Ask for a credit
-          </button>
+          <button (click)="goToNewCredit()">Ask for a credit</button>
         </li>
       </ng-container>
       <li *ngIf="isLogged"><button (click)="handleLogout()">Logout</button></li>

@@ -8,6 +8,7 @@ import { UserService } from '../services/user-service.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  public userId = localStorage.getItem('user');
   get isLogged(): string | null {
     return this.userService.isLogged;
   }
@@ -20,12 +21,18 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  getId(): string {
-    if (localStorage.getItem('user')) {
-      const { id } = JSON.parse(localStorage.getItem('user')!);
-      return id;
-    } else {
-      return '';
+  // getId(): string {
+  //   if (localStorage.getItem('user')) {
+  //     const { id } = JSON.parse(localStorage.getItem('user')!);
+  //     return id;
+  //   } else {
+  //     return '';
+  //   }
+  // }
+  goToNewCredit(): void {
+    if (localStorage.hasOwnProperty('user') !== null) {
+      this.userId = localStorage.getItem('user');
     }
+    this.router.navigate([`/credits/new/${this.userId}`]);
   }
 }
