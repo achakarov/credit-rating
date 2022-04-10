@@ -14,7 +14,7 @@ export class MyCreditsComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.readMyCredits(this.userId).subscribe((result) => {
+    this.userService.readMyCredits(this.userId).subscribe((result: any) => {
       this.credits = result;
       console.log(this.credits);
     });
