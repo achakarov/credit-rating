@@ -1,7 +1,6 @@
 <section class="credits-section">
-  <h3>My Credits</h3>
-
-  <table>
+  <h1 class="credits-section-heading">My Credits</h1>
+  <table class="credits-section-table">
     <thead>
       <tr>
         <th>Due date</th>
@@ -10,7 +9,7 @@
         <th>Credit status<br /></th>
       </tr>
     </thead>
-    <tbody *ngFor="let credit of this.credits">
+    <tbody *ngFor="let credit of credits">
       <tr>
         <td>{{ credit.due_date }}</td>
         <td>{{ credit.installment_days }}</td>

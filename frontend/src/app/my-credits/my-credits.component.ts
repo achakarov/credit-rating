@@ -8,14 +8,14 @@ import { Credit } from '../interfaces/ICredit';
   styleUrls: ['./my-credits.component.css'],
 })
 export class MyCreditsComponent implements OnInit {
-  public credits: any;
+  public credits: Credit[] | undefined;
   public userId = localStorage.getItem('user');
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.readMyCredits(this.userId).subscribe((result: any) => {
-      this.credits = JSON.stringify(result);
+    this.userService.readMyCredits(this.userId).subscribe((result) => {
+      this.credits = result;
       console.log(this.credits);
     });
   }
