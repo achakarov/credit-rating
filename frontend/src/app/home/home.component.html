@@ -10,7 +10,7 @@
     </p>
     <div class="auth-buttons">
       <a *ngIf="!isLogged" id="login-btn" routerLink="/login">Login</a>
-      <button *ngIf="isLogged" id="login-btn" (click)="goToMyCredits()">
+      <button *ngIf="isLogged" id="my-credits-btn" (click)="goToMyCredits()">
         My Credits
       </button>
     </div>

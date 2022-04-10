@@ -47,6 +47,22 @@
     color: rgb(255, 102, 0);
     padding: 10px 20px;
   }
+
+  #my-credits-btn{
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: center;
+    transition: 0.5s;
+    border: none;
+    border-radius: 20px;
+    margin-top: 30px;
+  }
+
+  #my-credits-btn:hover{
+    background: #fff;
+    color: rgb(255, 102, 0);
+    padding: 10px 20px;
+  }
   
   img {
     width: 25px;
