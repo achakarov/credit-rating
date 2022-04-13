@@ -23,10 +23,10 @@ export class CreditsController {
     const contract_time = null;
     const create_time = new Date();
     const discount_code = null;
-    const installment_days = 30.0;
+    const installment_days = 30.0; // 15/30 credit.type
     const due_date = addDays(create_time, installment_days);
     const forfeit_accruals_enabled = 1;
-    const installments_number = 1;
+    const installments_number = 1; //credit.period
     const principal = 1000; //credit.amount
     const utilization_time = null;
     const credit_status_id = 40; // credit evaluation
