@@ -15,4 +15,8 @@ export class CreditService {
       user_id: Number(id),
     });
   }
+
+  async create(credit) {
+    return await this.creditRepository.save(credit);
+  }
 }
