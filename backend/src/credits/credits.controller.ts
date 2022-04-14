@@ -12,17 +12,11 @@ export class CreditsController {
 
   @Post('new/:id')
   create(@Param('id') id, @Body() credit) {
-    function addDays(date, days) {
-      let result = new Date(date);
-      result.setDate(result.getDate() + days);
-      return result;
-    }
-
     const contract_time = null;
     const create_time = new Date();
     const discount_code = null;
     const installment_days = credit.type; // 15/30 credit.type
-    const due_date = addDays(create_time, installment_days);
+    const due_date = this.creditService.addDays(create_time, installment_days);
     const forfeit_accruals_enabled = 1;
     const installments_number = credit.period; //credit.period
     const principal = credit.amount; //credit.amount
