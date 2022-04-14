@@ -1,6 +1,6 @@
 <section class="first-section">
   <section class="background-container">
-    <form #form="ngForm" (ngSubmit)="createCredit(form)">
+    <form #form="ngForm">
       <h1>Ask for a credit</h1>
       <label for="type">Type</label>
       <select name="type" id="type" ngModel>
@@ -19,7 +19,7 @@
         <option value="nine">9 months</option>
         <option value="twelve">12 months</option>
       </select>
-      <button>Submit</button>
+      <button (click)="createCredit(form)">Submit</button>
     </form>
   </section>
 </section>
