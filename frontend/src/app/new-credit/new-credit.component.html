@@ -1,18 +1,18 @@
 <section class="first-section">
   <section class="background-container">
-    <form>
+    <form #form="ngForm" (ngSubmit)="createCredit(form)">
       <h1>Ask for a credit</h1>
       <label for="type">Type</label>
-      <select name="type" id="type">
+      <select name="type" id="type" ngModel>
         <option value="monthly_installment">Monthly Installments</option>
         <option value="weekly_installment">Bi-weekly Installments</option>
       </select>
 
       <label for="amount">Amount (200 - 5000) BGN</label>
-      <input type="number" name="amount" min="200" max="5000" />
+      <input type="number" ngModel name="amount" min="200" max="5000" />
 
       <label for="period">Period</label>
-      <select name="period" id="period">
+      <select name="period" ngModel id="period">
         <option value="one">1 month</option>
         <option value="three">3 months</option>
         <option value="six">6 months</option>
