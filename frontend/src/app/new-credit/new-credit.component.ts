@@ -14,7 +14,7 @@ export class NewCreditComponent implements OnInit {
   ngOnInit(): void {}
 
   createCredit(form: NgForm): void {
-    console.log(form.value);
+    // console.log(form.value);
     this.userService.createCredit(form.value, this.userId);
   }
 }

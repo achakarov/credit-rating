@@ -59,6 +59,7 @@ export class UserService {
 
     console.log(type, amount, period);
     console.log(newCredit);
+    console.log(userId);
 
     return this.httpClient.post(
       `${this.API_SERVER}/credits/new/${userId}`,
