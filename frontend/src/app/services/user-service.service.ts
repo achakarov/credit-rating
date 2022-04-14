@@ -29,7 +29,7 @@ export class UserService {
     );
   }
 
-  public createCredit(credit: NewCredit, userId: any) {
+  createCredit(credit: NewCredit, userId: any) {
     const { type, amount, period } = credit;
     const newCredit = { type: 0, amount, period: 0 };
 
