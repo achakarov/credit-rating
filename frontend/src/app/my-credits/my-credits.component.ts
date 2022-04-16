@@ -16,11 +16,26 @@ export class MyCreditsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.readMyCredits(this.userId).subscribe((result: any) => {
       result.forEach((element: { credit_status_id: number | string }) => {
-        if (element.credit_status_id in [4, 5, 6, 7, 8, 9, 10, 11, 38, 40]) {
-          element.credit_status_id = 'Approved';
-        } else if (element.credit_status_id in [1, 2, 3]) {
+        if (
+          element.credit_status_id === 1 ||
+          element.credit_status_id === 2 ||
+          element.credit_status_id === 3
+        ) {
           element.credit_status_id = 'New';
-          console.log(element);
+          // console.log(element);
+        } else if (
+          element.credit_status_id === 4 ||
+          element.credit_status_id === 5 ||
+          element.credit_status_id === 6 ||
+          element.credit_status_id === 7 ||
+          element.credit_status_id === 8 ||
+          element.credit_status_id === 9 ||
+          element.credit_status_id === 10 ||
+          element.credit_status_id === 11 ||
+          element.credit_status_id === 38 ||
+          element.credit_status_id === 40
+        ) {
+          element.credit_status_id = 'Approved';
         } else {
           element.credit_status_id = 'Rejected';
         }
