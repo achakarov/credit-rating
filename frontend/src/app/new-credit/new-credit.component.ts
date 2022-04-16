@@ -15,13 +15,12 @@ export class NewCreditComponent implements OnInit {
   ngOnInit(): void {}
 
   createCredit(form: NgForm): void {
-    // console.log(form.value);
     this.userService
       .createCredit(form.value, this.userId)
       .subscribe((result) => {
         console.log(result);
       });
-    this.router.navigate(['/']);
+    this.router.navigate([`/credits/user/${this.userId}`]);
     form.reset();
   }
 }
