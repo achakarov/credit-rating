@@ -21,7 +21,7 @@ export class CreditsController {
     const installments_number = credit.period; //credit.period
     const principal = credit.amount; //credit.amount
     const utilization_time = null;
-    const credit_status_id = 100; // credit evaluation
+    const credit_status_id = 1; // credit evaluation
     const operator_id = 1;
     const product_id = 1;
     const user_id = id;
