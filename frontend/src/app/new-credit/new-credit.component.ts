@@ -20,7 +20,7 @@ export class NewCreditComponent implements OnInit {
       .subscribe((result) => {
         console.log(result);
       });
-    this.router.navigate([`/credits/user/${this.userId}`]);
+    this.router.navigate(['/']);
     form.reset();
   }
 }
