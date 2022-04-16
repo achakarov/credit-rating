@@ -16,16 +16,18 @@ export class MyCreditsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.readMyCredits(this.userId).subscribe((result: any) => {
       this.credits = result;
-      console.log(this.credits);
+      result.forEach((element: { credit_status_id: any }) => {
+        if (
+          element.credit_status_id === 40 ||
+          element.credit_status_id in [4, 5, 6, 7, 8, 9, 10, 11]
+        ) {
+          element.credit_status_id = 'Approved';
+          console.log(element);
+        } else {
+          element.credit_status_id = 'Rejected';
+        }
+      });
+      // console.log(this.credits);
     });
-  }
-
-  getId(): string {
-    if (localStorage.getItem('user')) {
-      const { uid } = JSON.parse(localStorage.getItem('user')!);
-      return uid;
-    } else {
-      return '';
-    }
   }
 }
