@@ -7,7 +7,7 @@ import { Repository } from 'typeorm';
 export class CreditService {
   constructor(
     @InjectRepository(Credit)
-    private creditRepository: Repository<Credit>,
+    private creditRepository,
   ) {}
 
   async readAllOfUser(id: string): Promise<Credit[]> {
@@ -18,6 +18,15 @@ export class CreditService {
 
   async create(credit) {
     return await this.creditRepository.save(credit);
+  }
+
+  async readAllOfUserByStatus(id: string, status: number) {
+    return await this.creditRepository.find({
+      where: {
+        user_id: Number(id),
+        credit_status_id: status,
+      },
+    });
   }
 
   addDays(date, days) {
