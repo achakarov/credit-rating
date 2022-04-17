@@ -22,7 +22,6 @@ export class MyCreditsComponent implements OnInit {
           element.credit_status_id === 3
         ) {
           element.credit_status_id = 'New';
-          // console.log(element);
         } else if (
           element.credit_status_id === 4 ||
           element.credit_status_id === 5 ||
