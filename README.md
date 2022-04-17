@@ -1,4 +1,4 @@
-# MyBlog
+# Credit Rating
 
 The project shows a credit request app created with Angular, NestJS and MySQL Database.
 
