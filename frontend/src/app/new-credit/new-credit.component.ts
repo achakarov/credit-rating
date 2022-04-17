@@ -15,6 +15,18 @@ export class NewCreditComponent implements OnInit {
   ngOnInit(): void {}
 
   createCredit(form: NgForm): void {
+    const { type, amount, period } = form.value;
+
+    if (type === '' || amount === '' || period === '') {
+      window.alert('Please fill in all the fields');
+      return;
+    }
+
+    if (amount < 200 || amount > 5000) {
+      window.alert('Credit amount must be between BGN 200 and BGN 5000');
+      return;
+    }
+
     this.userService
       .createCredit(form.value, this.userId)
       .subscribe((result) => {
