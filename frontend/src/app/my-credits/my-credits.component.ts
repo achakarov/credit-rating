@@ -21,7 +21,7 @@ export class MyCreditsComponent implements OnInit {
           element.credit_status_id === 2 ||
           element.credit_status_id === 3
         ) {
-          element.credit_status_id = 'New';
+          element.credit_status_id = 'We will contact you!';
         } else if (
           element.credit_status_id === 4 ||
           element.credit_status_id === 5 ||
